@@ -40,11 +40,9 @@ static RemoteControls *remoteControls = nil;
             }
             // cover is local file
             else {
-                NSString *basePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-                NSString *fullPath = [NSString stringWithFormat:@"%@%@", basePath, cover];
-                BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:fullPath];
+                BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:cover];
                 if (fileExists) {
-                    image = [UIImage imageNamed:fullPath];
+                    image = [UIImage imageNamed:cover];
                 }
             }
         }
